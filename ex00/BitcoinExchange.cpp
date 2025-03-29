@@ -42,11 +42,11 @@ Bitcoin::Bitcoin(const std::string&file) {
         }
     }
     
-    while (getline(f, line))
+    while (std::getline(f, line))
     {
         std::stringstream ss(line);
 
-        if (getline(ss, date, ',') && (ss >> rate))
+        if (std::getline(ss, date, ',') && (ss >> rate))
             _rates[date] = rate;
     }
 }
